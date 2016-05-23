@@ -158,8 +158,8 @@ class Tb_user extends CI_Controller
 	$this->form_validation->set_rules('status_active', 'status active', 'trim|required');
 	$this->form_validation->set_rules('user_created', 'user created', 'trim|required');
 	$this->form_validation->set_rules('date_created', 'date created', 'trim|required');
-	$this->form_validation->set_rules('user_modified', 'user modified', 'trim|required');
-	$this->form_validation->set_rules('date_modified', 'date modified', 'trim|required');
+	$this->form_validation->set_rules('user_modified', 'user modified', 'trim');
+	$this->form_validation->set_rules('date_modified', 'date modified', 'trim');
 
 	$this->form_validation->set_rules('id', 'id', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
