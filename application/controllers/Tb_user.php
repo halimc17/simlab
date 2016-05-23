@@ -20,7 +20,7 @@ class Tb_user extends CI_Controller
             'tb_user_data' => $tb_user
         );
 
-        $this->load->view('tb_user/tb_user_list', $data);
+        $this->load->view('tb_user/tb_user_list_view', $data);
     }
 
     public function read($id) 
@@ -60,7 +60,7 @@ class Tb_user extends CI_Controller
 	    'user_modified' => set_value('user_modified'),
 	    'date_modified' => set_value('date_modified'),
 	);
-        $this->load->view('tb_user/tb_user_form', $data);
+        $this->load->view('tb_user/tb_user_form_view', $data);
     }
     
     public function create_action() 
@@ -105,7 +105,7 @@ class Tb_user extends CI_Controller
 		'user_modified' => set_value('user_modified', $row->user_modified),
 		'date_modified' => set_value('date_modified', $row->date_modified),
 	    );
-            $this->load->view('tb_user/tb_user_form', $data);
+            $this->load->view('tb_user/tb_user_form_view', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('tb_user'));

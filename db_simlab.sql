@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-05-23 13:51:55
+Date: 2016-05-23 16:02:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -145,7 +145,7 @@ CREATE TABLE `tb_user` (
   `date_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_user
