@@ -28,8 +28,8 @@
             <thead>
                 <tr>
                     <th width="80px">No</th>
+            <th>Nama</th>        
 		    <th>Email</th>
-		    <th>Nama</th>
 		    <th>Jenis</th>
 		    <th>Alamat</th>
 		    <th>Telepon</th>
@@ -52,8 +52,8 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $tb_pemohon->email ?></td>
-		    <td><?php echo $tb_pemohon->nama ?></td>
+            <td><?php echo anchor(site_url('tb_pemohon/read/'.$tb_pemohon->id), $tb_pemohon->nama) ?></td>
+		    <td><?php echo $tb_pemohon->email ?></td>		    
 		    <td><?php echo $tb_pemohon->jenis ?></td>
 		    <td><?php echo $tb_pemohon->alamat ?></td>
 		    <td><?php echo $tb_pemohon->telepon ?></td>
@@ -67,8 +67,6 @@
 		    <td><?php echo $tb_pemohon->date_modified ?></td>
 		    <td style="text-align:center" width="200px">
 			<?php 
-			echo anchor(site_url('tb_pemohon/read/'.$tb_pemohon->id),'Read'); 
-			echo ' | '; 
 			echo anchor(site_url('tb_pemohon/update/'.$tb_pemohon->id),'Update'); 
 			echo ' | '; 
 			echo anchor(site_url('tb_pemohon/delete/'.$tb_pemohon->id),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
