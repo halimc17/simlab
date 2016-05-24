@@ -37,6 +37,19 @@
 
                 <div class="row">
                 <p>Lorem ipsum dolor sit amet</p>
+                <?php var_dump($this->ion_auth->user()->row()); ?>
+
+                <br />
+                <br />
+                <br />
+                <?php 
+                  $data['user']=$this->ion_auth->user()->row();
+                  $username=$data['user']->username;
+                  $firstname=$data['user']->first_name;
+                  $lastname=$data['user']->last_name;
+
+                  echo "Welcome : ".$firstname." ".$lastname;
+                 ?>
                 </div>
 
               </div>
