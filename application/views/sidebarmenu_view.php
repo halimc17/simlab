@@ -116,7 +116,7 @@
               <h3>Administrator</h3>
               <ul class="nav side-menu">                
                 <li><a href="<?php echo site_url('tb_pemohon/'); ?>"><i class="fa fa-laptop"></i> Master Pemohon</a></li>
-                <li><a href="<?php echo site_url('tb_user/'); ?>"><i class="fa fa-laptop"></i> Master User</a></li>
+                <li><a href="<?php echo site_url('users/'); ?>"><i class="fa fa-laptop"></i> Master User</a></li>
                 <li><a href="<?php echo site_url('tb_group/'); ?>"><i class="fa fa-laptop"></i> Master Group</a></li>
               </ul>
             </div>

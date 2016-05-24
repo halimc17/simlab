@@ -39,9 +39,39 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-
+			
 			$this->_render_page('auth/index', $this->data);*/
 			redirect('home/');
+
+		}
+	}
+
+	function index2()
+	{
+		if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
+		{
+			// redirect them to the home page because they must be an administrator to view this
+			return show_error('You must be an administrator to view this page.');
+		}
+		else
+		{
+			// set the flash data error message if there is one
+			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+			//list the users
+			$this->data['users'] = $this->ion_auth->users()->result();
+			foreach ($this->data['users'] as $k => $user)
+			{
+				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
+			}
+			
+			$this->_render_page('auth/index', $this->data);
+			//redirect('home/');
 
 		}
 	}
@@ -467,6 +497,7 @@ class Auth extends CI_Controller {
             // display the create user form
             // set the flash data error message if there is one
             $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+            
 
             $this->data['first_name'] = array(
                 'name'  => 'first_name',
@@ -518,8 +549,12 @@ class Auth extends CI_Controller {
             );
 
             $this->_render_page('auth/create_user', $this->data);
+            //$this->_render_page('users_form', $this->data);
+            //redirect('users/create', $this->data);
+
         }
     }
+
 
 	// edit a user
 	function edit_user($id)

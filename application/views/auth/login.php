@@ -45,6 +45,7 @@
       <section class="login_content">
           <div>
             <img src="<?php echo base_url(); ?>assets/img/kkp-logo.png" style="width:200px;height:200px;"/>
+            <h2>BADAN UJI STANDAR KARANTINA IKAN, PENGENDALIAN MUTU DAN KEAMANAN HASIL PERIKANAN</h2>  
           </div>
           <br />
           <p><?php echo lang('login_subheading');?></p>
